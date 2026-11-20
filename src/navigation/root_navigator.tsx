@@ -4,9 +4,13 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import HomeScreen from '../screens/home_screen';
 import QuizScreen from '../screens/quiz_screen';
-import { HomeStackParamList } from './types';
+import { HomeStackParamList, RootDrawerParamList } from './types';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import ResultsScreen from '../screens/results_screen';
+import DrawerContent from './drawer_content';
 
 const Stack = createNativeStackNavigator<HomeStackParamList>();
+const Drawer = createDrawerNavigator<RootDrawerParamList>();
 
 function HomeStack() {
   return (
@@ -19,9 +23,20 @@ function HomeStack() {
 
 
 export default function RootNavigator() {
-  return (
+return (
     <NavigationContainer>
-      <HomeStack/>
+      <Drawer.Navigator drawerContent={(props) => <DrawerContent {...props} />}>
+        <Drawer.Screen 
+          name="Main" 
+          component={HomeStack} 
+          options={{ title: 'Ekran główny' }} 
+        />
+        <Drawer.Screen 
+          name="Results" 
+          component={ResultsScreen} 
+          options={{ title: 'Wyniki' }} 
+        />
+      </Drawer.Navigator>
     </NavigationContainer>
   );
 }

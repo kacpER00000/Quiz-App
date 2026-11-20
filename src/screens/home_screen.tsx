@@ -17,7 +17,7 @@ const HomeScreen = () => {
                     </Pressable>
                 )}
             </View>
-            <Pressable style={styles.resultsButton}>
+            <Pressable style={styles.resultsButton} onPress={() => navigation.navigate('Results')}>
                 <Text style={styles.resultsText}>Wyniki</Text>
             </Pressable>
         </View>

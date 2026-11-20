@@ -11,6 +11,5 @@ export default function App() {
         <RootNavigator/>
       </SafeAreaView>
     </SafeAreaProvider>
-  );
 }
 

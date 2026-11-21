@@ -51,7 +51,6 @@ const styles = StyleSheet.create({
         color:'#3a3838',
         fontWeight: '400'
     },
-
     resultsButton: {
         backgroundColor: '#0c1244',
         alignItems: 'center',
